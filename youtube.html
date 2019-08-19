@@ -37,7 +37,7 @@ var params = getSearchParameters();
         player = new YT.Player('player', {
           height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
           width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-          videoId: 'uql_A0g_NIQ',
+          videoId: params.v,
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
