@@ -38,8 +38,8 @@ var params = getSearchParameters();
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5,
-          width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5,
+          height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 5,
+          width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) + 5,
           videoId: params.v,
           events: {
             'onReady': onPlayerReady,
