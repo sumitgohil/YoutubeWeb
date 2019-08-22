@@ -14,7 +14,7 @@
 
   </style>
 </head>
-  <body>
+  <body style="background-color: #2d2d2d;">
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player" class="video-container"></div>
 
@@ -54,7 +54,8 @@ var params = getSearchParameters();
           videoId: params.v,
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
+            'onError': onPlayerError
           },
         playerVars: { 'autoplay': 0, 'controls': 1, 'playsinline' : 1, 'modestbranding':1, 'iv_load_policy':3,'enablejsapi':1, 'origin':'https://sumitgohil.github.io'},
         });
@@ -63,6 +64,10 @@ var params = getSearchParameters();
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
     document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+  }
+
+  function onPlayerError(error){
+    console.log("ERRORFROMHTML - "+error);
   }
   function playerState(playerStatus) {
     console.log("MSGFROMHTML - "+playerStatus);
